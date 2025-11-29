@@ -14,7 +14,7 @@ public class DBConnectionFactory {
 
         switch (envType) {
             case JENKINS_CHROME:
-                DriverManager.getConnection(
+                return DriverManager.getConnection(
                         "jdbc:mysql://mysql-db-1:3306/db", "user", "password");
             default:
                 return DriverManager.getConnection(
