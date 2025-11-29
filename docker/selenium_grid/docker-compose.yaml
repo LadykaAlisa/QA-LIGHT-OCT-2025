@@ -9,6 +9,7 @@
 # Container names found in:
 # docker ps
 
+# default selenium grid password: secret
 version: "3"
 
 services:
