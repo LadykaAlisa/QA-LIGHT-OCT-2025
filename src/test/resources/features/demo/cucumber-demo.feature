@@ -22,3 +22,7 @@ Feature: other cucumber stuff
   Scenario: Enum params3
     Given Support agent executes REGISTER_NEW_USER_DATA
     Given Support agent executes DELETE_USER_DATA
+
+  Scenario: Enum params4
+    Given Support agent executes REGISTER_NEW_USER_DATA
+    Given Support agent executes DELETE_USER_DATA

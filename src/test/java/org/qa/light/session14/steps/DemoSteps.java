@@ -2,8 +2,12 @@ package org.qa.light.session14.steps;
 
 import io.cucumber.java.en.Given;
 import org.qa.light.session12.AgentActions;
+import org.testng.Assert;
+
+import java.util.Random;
 
 public class DemoSteps {
+    private final static Random RANDOM = new Random();
 
     @Given("Print this number {int}")
     public void printThisNumber(int number) {
@@ -17,6 +21,13 @@ public class DemoSteps {
 
     @Given("Support agent executes {}")
     public void supportAgentExecutes(AgentActions actions) {
+        int i = RANDOM.nextInt(100);
+        if (i <= 5) {
+            throw new RuntimeException("Random error");
+        }
+        if (i <= 10) {
+            Assert.fail("Test broke randomly!");
+        }
         switch (actions) {
             case UPDATE_USER_DATA:
                 System.out.println("Agent updates user data");
